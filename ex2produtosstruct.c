@@ -23,7 +23,7 @@ int main(){
         scanf("%d", &prod[cont].cod);
         
         printf("Informe o nome do produto: ");
-        fgets(prod.nome, 30, stdin); //comando para pegar a string, com limite dos chars
+        fgets(prod[cont].nome, 30, stdin); //comando para pegar a string, com limite dos chars
 
         //[] para cada indice do vetor 
         
