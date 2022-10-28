@@ -23,6 +23,7 @@ int main(){
         scanf("%d", &prod[cont].cod);
         
         printf("Informe o nome do produto: ");
+        fflush(stdin);  //limpar o buffer pq a string esta armazenando o enter do input anterior
         fgets(prod[cont].nome, 30, stdin); //comando para pegar a string, com limite dos chars
 
         //[] para cada indice do vetor 
