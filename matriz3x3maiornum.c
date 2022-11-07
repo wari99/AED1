@@ -1,6 +1,9 @@
 #include <stdio.h>
 
-
+/*
+Complexidade para percorrer a matriz: n²
+Sempre vai ser percorrida toda a matriz. 
+*/
 int main()
 {
     int i;
