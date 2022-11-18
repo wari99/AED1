@@ -25,7 +25,7 @@ void exibirLista(listaSeq L){ //procedimento para exibir a lista
     }
 }
 
-int buscarValor(int valor, listaSeq L){ //parametros : valor que vai ser buscado, e a lista
+int buscarValor(listaSeq L, int valor){ //parametros : valor que vai ser buscado, e a lista
     int i;
     for(i = 0; i < L.n; i++){
         if(L.valores[i] == valor){
@@ -35,8 +35,31 @@ int buscarValor(int valor, listaSeq L){ //parametros : valor que vai ser buscado
     return -1; //se for uma posicao invalida
 }
 
+void inserir(listaSeq *L, int valor){ //inserir elemento na lista
+    if(L->n < max){ //usando a seta pois a lista foi passada por referencia
+        if(buscarValor(L,valor) == -1){
+            L->valores[L->n] = valor;
+            (L->n)++;
+        }
+        else{
+            printf("\nElemento ja cadastrado!");
+        }
+    }
+    else{
+        printf("\nLista cheia!");
+    }
+}
+
 int main(){
     listaSeq lista; 
+    
+    inicializar(&lista); //passagem por referencia, precisa passar o endereco da lista
+    inserir(&lista, 5);
+    inserir(&lista, 2);
+    inserir(&lista, 4);
+    inserir(&lista, 8);
+    
+    exibirLista(lista);
     
     return 0;
 }
